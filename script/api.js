@@ -1,5 +1,5 @@
 const gun = Gun(['https://gun-manhattan.herokuapp.com/gun']);
-const gameName = "fritz"
+const gameName = "wwr"
 
 
 function getSecretID()
@@ -69,7 +69,7 @@ function reset_indicators(roomID)
 
 function add_vote(roomID, playerid) {
     gun.get(gameName + "/rooms/").get(roomID).get("player"+playerid+"_ind").once((data,key)=>{
-        gun.get(gameName + "/rooms/").get(roomID).get("player"+playerid+"_ind").set(data+1);
+        gun.get(gameName + "/rooms/").get(roomID).get("player"+playerid+"_ind").put(data+1);
     })
 } 
 

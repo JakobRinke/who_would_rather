@@ -33,9 +33,10 @@
         
 
         <button class="sub" 
-                onclick="writePlayerSlot(roomID, document.getElementById('p1').value, document.getElementById('p2').value)" 
+                onclick="writePlayerSlot(roomID, document.getElementById('p1').value, document.getElementById('p2').value);
+                change_gamestate(roomID, 1)" 
                 id="endbtn"> 
-                    SpielStarten
+                    Spiel Starten
         </button>
 
 	</div>
@@ -44,19 +45,30 @@
 
         <h2> Wer würde eher... </h2>
 
-        <button onclick="add_vote(roomID, 1)" id="p1_btn"> Player1 </button>
-        <button onclick="add_vote(roomID, 2)" id="p2_btn"> Player2 </button>
+        <button onclick="add_vote(roomID, 1); set_gamestate(3)" id="p1_btn" class="changeButton"> Player1 </button>
+        <button onclick="add_vote(roomID, 2); set_gamestate(3)" id="p2_btn" class="changeButton"> Player2 </button>
 
 	</div>
+
+    <div id="gamestate_admin" class="gamestate_invisible">
+
+        <h2>  Bitte warten...</h2>
+        <button onclick="change_gamestate(roomID, 2)" id="adminBtn1" class="sub"> Vote enden </button>
+
+	</div>
+
 
     <div id="gamestate_show" class="gamestate_invisible">
 
         <h2> Wer würde eher: </h2>
 
-        <h3 id="p1_label"> Player 1 </h3>
-        <h3 id="p2_label"> Player 2 </h3>
+        <h2 id="p1_label"> Player 1 </h2>
+        <h2 id="p2_label"> Player 2 </h2>
 
         <progress id="progressBar" max="100" value="77"></progress>
+
+        <button onclick="reset()" id="adminBtn2" class="sub"> Restart </button>
+
 
 	</div>
 

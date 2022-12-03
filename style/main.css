@@ -140,7 +140,7 @@ h2 {
 
 .inputField {
 
-  width: 17%;
+  width: 40%;
   position: relative;
   height: 7vh;
   overflow: hidden;
@@ -186,11 +186,12 @@ h2 {
   margin-top: 10vh;
   border-radius: 20px;
   border-top: 10;
-  font-size: 1.2rem;
+  font-size: 2rem;
   border-color: #595f6e;
   background-color: transparent;
   float: left;
   width: 40%;
+  height: 15vh;
   margin-left: 5%;
   margin-right: 5%;
   opacity:0.8;
