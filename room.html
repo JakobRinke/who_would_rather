@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+
+
+
+<head>
+
+		<link rel="stylesheet" href="style/main.css" type="text/css">
+    
+		<link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+
+		<title>Fritz</title>
+
+		<meta charset ="utf-8">
+
+</head>
+
+
+<body>
+
+	<header>
+		<a href="index.html" class="back-arrow"> <img src="img/back.png" alt="Verlassen"></a>
+	</header>
+
+    <h1 id="RoomID"> Raum ID: </h1>
+
+  	<div id="gamestate_names" class="gamestate_visible">
+
+		
+        <input type="text" class="inputField" autocomplete="off" id="p1" required placeholder="Spieler1"/>
+        <input type="text" class="inputField" autocomplete="off" id="p2" required placeholder="Spieler2"/>
+        
+
+        <button class="sub" 
+                onclick="writePlayerSlot(roomID, document.getElementById('p1').value, document.getElementById('p2').value)" 
+                id="endbtn"> 
+                    SpielStarten
+        </button>
+
+	</div>
+
+    <div id="gamestate_vote" class="gamestate_invisible">
+
+        <h2> Wer würde eher... </h2>
+
+        <button onclick="add_vote(roomID, 1)" id="p1_btn"> Player1 </button>
+        <button onclick="add_vote(roomID, 2)" id="p2_btn"> Player2 </button>
+
+	</div>
+
+    <div id="gamestate_show" class="gamestate_invisible">
+
+        <h2> Wer würde eher: </h2>
+
+        <h3 id="p1_label"> Player 1 </h3>
+        <h3 id="p2_label"> Player 2 </h3>
+
+        <progress id="progressBar" max="100" value="77"></progress>
+
+	</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/gun/gun.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gun/sea.js"></script>
+    <script src="script/randfuncs.js"></script>
+    <script src="script/api.js"></script>
+    <script src="script/room.js"></script>
+
+
+</body>
+
+
+</html>
